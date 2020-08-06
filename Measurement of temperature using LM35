@@ -1,0 +1,14 @@
+int sensepin=A1;
+int sensorinput;
+double temp;
+void setup(){
+    Serial.begin(9600);
+}
+void loop(){
+    sensorinput=analogRead(A0);
+    temp=temp*5;
+    temp=temp-0.5;
+    temp=temp*100;
+    Serial.print("currrent temperature");
+    Serial.println("temperature");
+}
