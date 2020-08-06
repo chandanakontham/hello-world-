@@ -1,0 +1,27 @@
+int LED=13;
+int buzzer=12;
+int Smokesensor=A0;
+void setup(){
+    pinMode(A0,INPUT);
+    pinMode(13,OUTPUT);
+    pinMode(12,OUTPUT);
+    Serial.begin(9600);
+    }
+void loop(){
+    int sens=analogRead(A0);
+    if(sens>=220) {
+        digitalWrite(13,0);
+        delay(500);
+        digitalWrite(13,0);
+        digitalWrite(12,1);
+        delay(500);
+        digitalWrite(12,0);
+        digitalWrite(13,1);
+        delay(500);
+        digitalWrite(12,0);
+        }
+    else{
+        digitalWrite(13,0);
+        }
+    Serial.println(sens);
+    }
